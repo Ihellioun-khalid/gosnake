@@ -83,22 +83,21 @@ func main() {
 				switch event.Type {
 				case termbox.EventKey: // actions depend on key
 					switch event.Key {
+					case termbox.KeyArrowUp:
+						scene.character.Turn(SNAKE_DIRECTION_UP)
+					case termbox.KeyArrowDown:
+						scene.character.Turn(SNAKE_DIRECTION_DOWN)
+					case termbox.KeyArrowLeft:
+						scene.character.Turn(SNAKE_DIRECTION_LEFT)
+					case termbox.KeyArrowRight:
+						scene.character.Turn(SNAKE_DIRECTION_RIGHT)
 					case termbox.KeyCtrlZ, termbox.KeyCtrlC:
 						return
 					}
 
 					switch event.Ch {
 					case 'q':
-						return
-
-					case termbox.KeyArrowUp:
-						scene.character.Turn(SNAKE_DIRECTION_UP)
-					case KeyArrowDown:
-						scene.character.Turn(SNAKE_DIRECTION_DOWN)
-					case 'a':
-						scene.character.Turn(SNAKE_DIRECTION_LEFT)
-					case 'd':
-						scene.character.Turn(SNAKE_DIRECTION_RIGHT)
+						return	
 					}
 
 				case termbox.EventResize:
