@@ -88,12 +88,12 @@ func main() {
 					}
 
 					switch event.Ch {
-					case 'l':
+					case 'q':
 						return
 
-					case 'w':
+					case termbox.KeyArrowUp:
 						scene.character.Turn(SNAKE_DIRECTION_UP)
-					case 's':
+					case KeyArrowDown:
 						scene.character.Turn(SNAKE_DIRECTION_DOWN)
 					case 'a':
 						scene.character.Turn(SNAKE_DIRECTION_LEFT)
